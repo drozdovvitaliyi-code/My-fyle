@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Портфолио — создаю сайты | @gabbohin_04</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--surface:#fff;--text:#000;--muted:#777;--line:#e5e5e5;--accent:#000;--accent-text:#fff;--soft:#f4f4f2;--sh:rgba(0,0,0,.12);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d0d0d;--surface:#0d0d0d;--text:#fff;--muted:#9a9a9a;--line:#2a2a2a;--accent:#fff;--accent-text:#000;--soft:#191919;--sh:rgba(0,0,0,.6);color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0d0d0d;--surface:#0d0d0d;--text:#fff;--muted:#9a9a9a;--line:#2a2a2a;--accent:#fff;--accent-text:#000;--soft:#191919;--sh:rgba(0,0,0,.6);color-scheme:dark}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"Montserrat",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1160px;margin:0 auto;padding:0 28px}
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line)}
+.bar{display:flex;justify-content:space-between;align-items:center;padding:20px 0;gap:10px}
+.logo{font-weight:800;font-size:16px;color:var(--text);text-decoration:none;letter-spacing:1px;text-transform:uppercase}.logo span{color:inherit}
+nav{display:flex;gap:28px;flex-wrap:wrap}nav a{color:var(--text);text-decoration:none;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:1px;position:relative;padding:4px 0}
+nav a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--text);transition:width .35s ease}nav a:hover::after{width:100%}
+.hero{padding:110px 28px 90px;text-align:left;position:relative}
+.hero::before{display:none}
+.pill{display:block;font-size:12px;text-transform:uppercase;letter-spacing:3px;color:var(--muted);margin-bottom:26px;background:none;border:0;padding:0}
+h1{font-size:clamp(40px,8vw,92px);line-height:1;letter-spacing:-2px;margin:0 0 28px;font-weight:800;max-width:900px}
+h1 span{background:none;color:inherit;-webkit-text-fill-color:currentColor;border-bottom:.08em solid var(--text)}
+.lead{color:var(--muted);font-size:18px;max-width:520px;margin:0 0 36px;font-weight:400}
+.btn{display:inline-block;padding:18px 34px;border-radius:0;font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:1.5px;text-decoration:none;border:2px solid var(--text);cursor:pointer;margin:0 12px 12px 0;transition:background .3s,color .3s,transform .3s;background:var(--text);color:var(--bg);font-family:inherit}
+.btn:hover{background:var(--bg);color:var(--text);transform:none;box-shadow:none}.btn:active{transform:scale(.98)}
+.btn.ol,.btn.tg{background:var(--bg);color:var(--text)}.btn.ol:hover,.btn.tg:hover{background:var(--text);color:var(--bg)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:0;margin:70px 0 0;border-top:1px solid var(--line)}
+.stat{background:none;border:0;border-right:1px solid var(--line);border-radius:0;padding:26px 24px 0 0;margin-right:24px}.stat:last-child{border-right:0}
+.stat b{display:block;font-size:48px;font-weight:800;background:none;color:var(--text);-webkit-text-fill-color:currentColor;line-height:1}.stat span{color:var(--muted);font-size:13px;text-transform:uppercase;letter-spacing:1px}
+section{padding:80px 0}
+h2{font-size:clamp(30px,5vw,52px);letter-spacing:-1.5px;margin:0 0 14px;font-weight:800;line-height:1.05}
+.sub{color:var(--muted);margin:0 0 40px;font-size:16px}
+.chips{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:36px;border-bottom:1px solid var(--line)}
+.chip{border:0;background:none;color:var(--muted);padding:0 0 14px;border-radius:0;cursor:pointer;font-size:13px;text-transform:uppercase;letter-spacing:1px;font-weight:600;font-family:inherit;border-bottom:2px solid transparent;margin-bottom:-1px;transition:color .3s,border-color .3s}
+.chip:hover{color:var(--text);transform:none}.chip.on{background:none;color:var(--text);border-color:var(--text)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:48px 32px}
+.card{background:none;border:0;border-radius:0;overflow:visible;display:flex;flex-direction:column;animation:up .6s both;box-shadow:none}
+.card:hover{transform:none;box-shadow:none}
+@keyframes up{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.pv{height:260px;position:relative;display:flex;align-items:center;justify-content:center;font-size:84px;overflow:hidden}
+.pv::before{display:none}
+.pv i{font-style:normal;transition:transform .7s cubic-bezier(.2,.7,.2,1)}.card:hover .pv i{transform:scale(1.2)}
+.b{padding:20px 0 0;display:flex;flex-direction:column;flex:1}.b h3{margin:0 0 8px;font-size:22px;font-weight:700;letter-spacing:-.5px}.b p{margin:0 0 14px;color:var(--muted);font-size:14px;flex:1}
+.tags span{display:inline-block;font-size:11px;text-transform:uppercase;letter-spacing:1px;border:0;border-radius:0;padding:0;margin:0 14px 8px 0;color:var(--muted)}
+.b a{margin-top:6px;align-self:flex-start;text-align:left;padding:0 0 4px;border-radius:0;background:none;color:var(--text);font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:1px;text-decoration:none;border:0;border-bottom:2px solid var(--text);transition:letter-spacing .3s,opacity .3s}
+.b a:hover{background:none;color:var(--text);letter-spacing:2px;opacity:.7}
+.sv{display:block;counter-reset:n;border-top:1px solid var(--line)}
+.sv div{display:grid;grid-template-columns:70px 1fr 1.4fr;gap:20px;align-items:baseline;background:none;border:0;border-bottom:1px solid var(--line);border-radius:0;padding:28px 0;transition:padding .4s,background .4s}
+.sv div:hover{transform:none;padding-left:16px;background:var(--soft)}
+.sv div::before{counter-increment:n;content:"0" counter(n);font-size:13px;color:var(--muted);font-weight:600}
+.sv em{display:none}.sv b{display:block;font-size:22px;margin:0;font-weight:700;letter-spacing:-.5px}.sv span{color:var(--muted);font-size:15px}
+@media(max-width:700px){.sv div{grid-template-columns:40px 1fr}.sv span{grid-column:2}}
+.note{background:var(--soft);border:0;border-radius:0;padding:16px 20px;color:var(--muted);font-size:13px;margin-top:50px}
+.fb{display:grid;grid-template-columns:1fr 1fr;gap:60px;background:none;border:0;border-radius:0;padding:0}
+@media(max-width:720px){.fb{grid-template-columns:1fr;gap:36px}}
+label{display:block;font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);margin:0 0 4px}
+input,textarea{width:100%;padding:12px 0;border-radius:0;border:0;border-bottom:1px solid var(--text);background:none;color:var(--text);font:inherit;margin-bottom:24px;transition:border-color .3s,padding .3s}
+input:focus,textarea:focus{outline:0;box-shadow:none;border-color:var(--text);padding-left:10px}
+textarea{min-height:90px;resize:vertical}
+.fb h3{font-size:24px;letter-spacing:-.5px}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,30px);background:var(--text);color:var(--bg);padding:14px 24px;border-radius:0;opacity:0;transition:all .35s;z-index:40;font-size:13px;text-transform:uppercase;letter-spacing:1px}.toast.on{opacity:1;transform:translate(-50%,0)}
+.rv{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}.rv.in{opacity:1;transform:none}
+footer{background:var(--text);color:var(--bg);padding:40px 0 48px;text-align:center;font-size:12px;text-transform:uppercase;letter-spacing:1.5px;border:0}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
+</style>
+
+</head>
+<body>
+<div class="top"><div class="wrap bar"><a class="logo" href="#top"><span>@gabbohin_04</span></a><nav><a href="#works">Работы</a><a href="#about">Услуги</a><a href="#contact">Связь</a></nav></div></div>
+<header class="wrap hero" id="top">
+  <div class="pill">🚀 Создаю сайты для бизнеса и личных проектов</div>
+  <h1>Сайты, которые <span>продают и запоминаются</span></h1>
+  <p class="lead">Лендинги, многостраничные сайты и интернет-магазины. Все примеры ниже сделал я, их можно открыть и посмотреть вживую.</p>
+  <a class="btn" href="#works">Смотреть работы</a><a class="btn tg" href="https://t.me/gabbohin_04" target="_blank" rel="noopener">✈️ Написать в Telegram</a>
+  <div class="stats"><div class="stat"><b>5</b><span>сайтов в портфолио</span></div><div class="stat"><b>3</b><span>типа проектов</span></div><div class="stat"><b>24 ч</b><span>ответ на заявку</span></div></div>
+</header>
+
+<main class="wrap">
+<section id="works">
+  <h2 class="rv">Мои работы</h2><p class="sub rv">Это тоже сделал я: нажмите «Открыть сайт», чтобы посмотреть.</p>
+  <div class="chips rv" id="chips"></div>
+  <div class="grid" id="grid"></div>
+  <div class="note rv">ℹ️ Ссылки на сайты видны только владельцу, пока он не откроет к ним доступ. Перед показом клиентам нажмите «Поделиться» на каждом сайте.</div>
+</section>
+
+<section id="about">
+  <h2 class="rv">Что я делаю</h2><p class="sub rv">От идеи до готового сайта.</p>
+  <div class="sv">
+    <div class="rv"><em>📄</em><b>Лендинги</b><span>Одна страница, которая объясняет и собирает заявки.</span></div>
+    <div class="rv"><em>🏢</em><b>Сайты компаний</b><span>Много страниц: услуги, цены, команда, отзывы, контакты.</span></div>
+    <div class="rv"><em>🛒</em><b>Интернет-магазины</b><span>Каталог, поиск, корзина и заказ в мессенджер.</span></div>
+    <div class="rv"><em>🎨</em><b>Дизайн и анимации</b><span>Тёмная тема, адаптив под телефон и плавные эффекты.</span></div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2 class="rv">Обратная связь</h2><p class="sub rv">Напишите, что нужно, и сообщение откроется в моём Telegram.</p>
+  <div class="fb rv">
+    <div>
+      <label for="n">Ваше имя</label><input id="n" placeholder="Как к вам обращаться" autocomplete="name">
+      <label for="t">Какой сайт нужен</label><input id="t" placeholder="Например, интернет-магазин">
+      <label for="m">Сообщение</label><textarea id="m" placeholder="Расскажите коротко о задаче"></textarea>
+    </div>
+    <div>
+      <h3 style="margin-top:0">Связаться напрямую</h3>
+      <p style="color:var(--muted)">Нажмите кнопку: Telegram откроется с уже готовым текстом сообщения. Останется только отправить.</p>
+      <a class="btn tg" id="send" href="https://t.me/gabbohin_04" target="_blank" rel="noopener">✈️ Отправить в Telegram</a>
+      <button class="btn ol" id="cp" type="button">📋 Скопировать текст</button>
+      <p style="color:var(--muted);font-size:14px;margin-top:14px">Или напишите сами: <a href="https://t.me/gabbohin_04" target="_blank" rel="noopener" style="color:var(--accent);font-weight:600">@gabbohin_04</a></p>
+    </div>
+  </div>
+</section>
+</main>
+<footer>© 2026 · Все сайты в портфолио сделал @gabbohin_04</footer>
+<div class="toast" id="toast"></div>
+
+<script>
+var W=[
+["АвтоМастер","Автосервис","🔧","linear-gradient(135deg,#fdba74,#e8590c)","Сайт автомастерской с услугами, ценами по категориям и связью через Telegram и Max.",["Услуги","Цены","Telegram","Max"],"https://claude.ai/artifact/KwLMVHLmcbrp5Ax8VDGeWk","Одностраничник"],
+["Зерно","Кофейня","☕","linear-gradient(135deg,#d6a77a,#7a4a2b)","Лендинг кофейни: меню, преимущества, отзыв и блок «Заходите в гости».",["Лендинг","Меню","Адаптив"],"https://claude.ai/artifact/LvC3PPfT9ZChK1RegU7z2Z","Одностраничник"],
+["РемонтПро","Сайт строительной компании","🏗️","linear-gradient(135deg,#ffd54a,#1f2226)","8 страниц: услуги, цены, проекты, отдел продаж, отзывы, контакты. Анимации и стиль стройки.",["8 страниц","Отдел продаж","Анимации"],"https://claude.ai/artifact/9DkwY27peUcStpVUAXgK4u","Многостраничные"],
+["СтройМаркет","Интернет-магазин инструментов","🛠️","linear-gradient(135deg,#fde047,#f59e0b)","Каталог, фильтры, поиск, корзина и оформление заказа через Telegram и Max.",["Корзина","Поиск","Скидки"],"https://claude.ai/artifact/XnLVnmpP6ofKJNRVcWbMng","Магазины"],
+["Зелёный уголок","Магазин растений","🌿","linear-gradient(135deg,#86efac,#16a34a)","Магазин комнатных растений с карточкой товара, сортировкой и корзиной.",["Карточка товара","Сортировка","Корзина"],"https://claude.ai/artifact/C3QAdv3fyrkfFLhYCawqHT","Магазины"]
+];
+var cats=["Все","Одностраничник","Многостраничные","Магазины"],cat="Все";
+function $(i){return document.getElementById(i)}
+function toast(t){var e=$("toast");e.textContent=t;e.classList.add("on");clearTimeout(toast.t);toast.t=setTimeout(function(){e.classList.remove("on")},1800)}
+function chips(){$("chips").innerHTML=cats.map(function(c){return '<button class="chip'+(c===cat?' on':'')+'" data-c="'+c+'">'+c+'</button>'}).join("")}
+function grid(){$("grid").innerHTML=W.filter(function(w){return cat==="Все"||w[7]===cat}).map(function(w,i){return '<div class="card" style="animation-delay:'+i*70+'ms"><div class="pv" style="background:'+w[3]+'"><i>'+w[2]+'</i></div><div class="b"><h3>'+w[0]+'</h3><p>'+w[1]+'. '+w[4]+'</p><div class="tags">'+w[5].map(function(t){return '<span>'+t+'</span>'}).join("")+'</div><a href="'+w[6]+'" target="_blank" rel="noopener">Открыть сайт →</a></div></div>'}).join("")}
+document.addEventListener("click",function(e){var c=e.target.closest(".chip");if(c){cat=c.dataset.c;chips();grid()}});
+function msg(){var n=$("n").value.trim(),t=$("t").value.trim(),m=$("m").value.trim();var l=["Здравствуйте! Увидел(а) ваше портфолио."];if(n)l.push("Меня зовут "+n+".");if(t)l.push("Нужен сайт: "+t+".");if(m)l.push(m);return l.join("\n")}
+function upd(){$("send").href="https://t.me/gabbohin_04?text="+encodeURIComponent(msg())}
+["n","t","m"].forEach(function(i){$(i).addEventListener("input",upd)});upd();
+$("cp").onclick=function(){(navigator.clipboard?navigator.clipboard.writeText(msg()):Promise.reject()).then(function(){toast("Текст скопирован ✓")},function(){toast("Не удалось скопировать")})};
+var io=window.IntersectionObserver?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12}):null;
+document.querySelectorAll(".rv").forEach(function(el,i){if(io)io.observe(el);else el.classList.add("in")});
+chips();grid();
+</script>
+</body>
+</html>
